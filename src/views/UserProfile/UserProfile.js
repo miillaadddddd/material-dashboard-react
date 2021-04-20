@@ -17,7 +17,7 @@ import avatar from "assets/img/faces/marc.jpg";
 
 const styles = {
   cardCategoryWhite: {
-    color: "rgba(255,255,255,.62)",
+    color: "#FFFFFF",
     margin: "0",
     fontSize: "14px",
     marginTop: "0",
@@ -44,26 +44,29 @@ export default function UserProfile() {
         <GridItem xs={12} sm={12} md={8}>
           <Card>
             <CardHeader color="primary">
-              <h4 className={classes.cardTitleWhite}>Edit Profile</h4>
-              <p className={classes.cardCategoryWhite}>Complete your profile</p>
+              <div>
+              <h4 className={classes.cardTitleWhite}>ویرایش اطلاعات</h4>
+              <br />
+              <p className={classes.cardCategoryWhite}>برای انجام هر گونه تغییرات کلید ویرایش در انتهای همین صفحه را انتخاب کنید</p>
+              </div>
             </CardHeader>
             <CardBody>
               <GridContainer>
-                <GridItem xs={12} sm={12} md={5}>
+                <GridItem xs={12} sm={12} md={4}>
                   <CustomInput
-                    labelText="Company (disabled)"
+                    labelText="نام کاربری *"
                     id="company-disabled"
                     formControlProps={{
                       fullWidth: true
                     }}
-                    inputProps={{
-                      disabled: true
-                    }}
+                    // inputProps={{
+                    //   disabled: true
+                    // }}
                   />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
+                <GridItem xs={12} sm={12} md={4}>
                   <CustomInput
-                    labelText="Username"
+                    labelText="نام "
                     id="username"
                     formControlProps={{
                       fullWidth: true
@@ -72,7 +75,7 @@ export default function UserProfile() {
                 </GridItem>
                 <GridItem xs={12} sm={12} md={4}>
                   <CustomInput
-                    labelText="Email address"
+                    labelText="نام خانوادگی"
                     id="email-address"
                     formControlProps={{
                       fullWidth: true
@@ -81,19 +84,37 @@ export default function UserProfile() {
                 </GridItem>
               </GridContainer>
               <GridContainer>
-                <GridItem xs={12} sm={12} md={6}>
+                <GridItem xs={12} sm={12} md={3}>
                   <CustomInput
-                    labelText="First Name"
+                    labelText="جنسیت"
                     id="first-name"
                     formControlProps={{
                       fullWidth: true
                     }}
                   />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={6}>
+                <GridItem xs={12} sm={12} md={3}>
                   <CustomInput
-                    labelText="Last Name"
+                    labelText="کدملی"
                     id="last-name"
+                    formControlProps={{
+                      fullWidth: true
+                    }}
+                  />
+                </GridItem>
+                <GridItem xs={12} sm={12} md={3}>
+                  <CustomInput
+                    labelText="تاریخ تولد"
+                    id="last-name"
+                    formControlProps={{
+                      fullWidth: true
+                    }}
+                  />
+                </GridItem>
+                <GridItem xs={12} sm={12} md={3}>
+                  <CustomInput
+                    labelText="شماره موبایل"
+                    id="first-name"
                     formControlProps={{
                       fullWidth: true
                     }}
@@ -103,7 +124,7 @@ export default function UserProfile() {
               <GridContainer>
                 <GridItem xs={12} sm={12} md={4}>
                   <CustomInput
-                    labelText="City"
+                    labelText="استان"
                     id="city"
                     formControlProps={{
                       fullWidth: true
@@ -112,7 +133,7 @@ export default function UserProfile() {
                 </GridItem>
                 <GridItem xs={12} sm={12} md={4}>
                   <CustomInput
-                    labelText="Country"
+                    labelText="شهرستان"
                     id="country"
                     formControlProps={{
                       fullWidth: true
@@ -121,7 +142,7 @@ export default function UserProfile() {
                 </GridItem>
                 <GridItem xs={12} sm={12} md={4}>
                   <CustomInput
-                    labelText="Postal Code"
+                    labelText="شهر"
                     id="postal-code"
                     formControlProps={{
                       fullWidth: true
@@ -130,10 +151,31 @@ export default function UserProfile() {
                 </GridItem>
               </GridContainer>
               <GridContainer>
-                <GridItem xs={12} sm={12} md={12}>
-                  <InputLabel style={{ color: "#AAAAAA" }}>About me</InputLabel>
+                <GridItem xs={12} sm={12} md={4}>
                   <CustomInput
-                    labelText="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
+                    labelText="کد پستی"
+                    id="city"
+                    formControlProps={{
+                      fullWidth: true
+                    }}
+                  />
+                </GridItem>
+                <GridItem xs={12} sm={12} md={8}>
+                  <CustomInput
+                    labelText="آدرس"
+                    id="country"
+                    formControlProps={{
+                      fullWidth: true
+                    }}
+                  />
+                </GridItem>
+                
+              </GridContainer>
+              <GridContainer>
+                <GridItem xs={12} sm={12} md={12}>
+                  <InputLabel style={{ color: "#aaaa" }}>درباره من</InputLabel>
+                  <CustomInput
+                    labelText="خوشحال میشویم بیشتر با هم آشنا بشویم .."
                     id="about-me"
                     formControlProps={{
                       fullWidth: true
