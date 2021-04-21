@@ -25,7 +25,7 @@ import TableList from "views/TableList/TableList.js";
 import TableFactor from "views/TableFactor/TableFactor.js"
 import Typography from "views/Typography/Typography.js";
 import Icons from "views/Icons/Icons.js";
-import Maps from "views/Maps/Maps.js";
+
 import NotificationsPage from "views/Notifications/Notifications.js";
 
 // core components/views for RTL layout
@@ -56,7 +56,7 @@ const dashboardRoutes = [
     name: "صورت حساب ها",
     icon: "content_paste",
     component: TableFactor,
-    layout: "/admin",
+     layout: "/admin",
   },
   {
     path: "/typography",
@@ -79,12 +79,6 @@ const dashboardRoutes = [
     component: NotificationsPage,
     layout: "/admin",
   },
-  {
-    path: "/maps",
-    name: "Maps",
-    icon: LocationOn,
-    component: Maps,
-    layout: "/admin",
-  },
+  
 ];
 export default dashboardRoutes;

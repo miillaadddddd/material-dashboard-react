@@ -6,6 +6,9 @@ import {
 } from "assets/jss/material-dashboard-react.js";
 
 const dashboardStyle = {
+  marginTop:{
+    marginTop: "400px"
+  },
   successText: {
     color: successColor[0]
   },

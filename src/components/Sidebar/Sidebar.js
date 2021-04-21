@@ -52,6 +52,7 @@ export default function Sidebar(props) {
             key={key}
           >
             <ListItem button className={classes.itemLink + listItemClasses}>
+             
               {typeof prop.icon === "string" ? (
                 <Icon
                   className={classNames(classes.itemIcon, whiteFontClasses, {
@@ -68,13 +69,14 @@ export default function Sidebar(props) {
                 />
               )}
               <ListItemText
-                primary={props.rtlActive ? prop.rtlName : prop.name}
+                primary={prop.name}
                 className={classNames(classes.itemText, whiteFontClasses, {
                   [classes.itemTextRTL]: props.rtlActive,
                 })}
                 disableTypography={true}
               />
             </ListItem>
+          
           </NavLink>
         );
       })}

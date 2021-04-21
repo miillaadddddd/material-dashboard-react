@@ -10,6 +10,7 @@ import Table from "@material-ui/core/Table";
 import TableRow from "@material-ui/core/TableRow";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
+import Link from '@material-ui/core/Link';
 // @material-ui/icons
 import Edit from "@material-ui/icons/Edit";
 import Close from "@material-ui/icons/Close";
@@ -42,19 +43,18 @@ export default function Tasks(props) {
         {tasksIndexes.map(value => (
           <TableRow key={value} className={classes.tableRow}>
             <TableCell className={tableCellClasses}>
-              <Checkbox
-                checked={checked.indexOf(value) !== -1}
-                tabIndex={-1}
-                onClick={() => handleToggle(value)}
-                checkedIcon={<Check className={classes.checkedIcon} />}
-                icon={<Check className={classes.uncheckedIcon} />}
-                classes={{
-                  checked: classes.checked,
-                  root: classes.root
-                }}
-              />
+              
             </TableCell>
-            <TableCell className={tableCellClasses}>{tasks[value]}</TableCell>
+            <TableCell className={tableCellClasses}><Link
+      component="button"
+      variant="body2"
+      onClick={() => {
+        console.info("I'm a button.");
+      }}
+    >
+      {tasks[value]}
+    </Link>
+              </TableCell>
             <TableCell className={classes.tableActions}>
               <Tooltip
                 id="tooltip-top"
