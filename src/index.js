@@ -46,7 +46,7 @@ ReactDOM.render(
     <ThemeProvider theme={CustomThemeRtl}>
       <StylesProvider jss={jss}>
       <Route path="/admin" component={Admin} />
-      <Route path="/rtl" component={RTL} />
+     
       <Redirect from="/" to="/admin/dashboard" />
       </StylesProvider>
       </ThemeProvider>

@@ -48,15 +48,13 @@ export default function TableFactor() {
       
       <GridItem xs={12} sm={12} md={12}>
         <Card>
-          <CardHeader color="primary">
+          <CardHeader color="info">
             <h4 className={classes.cardTitleWhite}>خرید ها من</h4>
-            <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
-            </p>
+            
           </CardHeader>
           <CardBody>
             <Table
-              tableHeaderColor="primary"
+              tableHeaderColor="info"
               tableHead={["شماره صورت حساب",
             "مبلغ",
           "تاریخ خرید",
@@ -99,15 +97,13 @@ export default function TableFactor() {
       </GridItem>
       <GridItem xs={12} sm={12} md={12}>
         <Card>
-          <CardHeader color="primary">
+          <CardHeader color="info">
             <h4 className={classes.cardTitleWhite}>لیست تمام تراکنش ها</h4>
-            <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
-            </p>
+            
           </CardHeader>
           <CardBody>
             <Table
-              tableHeaderColor="primary"
+              tableHeaderColor="info"
               tableHead={["شماره", "مبلغ", "توضیحات", "تاریخ", "نوع"]}
               tableData={[
                 [
@@ -145,15 +141,13 @@ export default function TableFactor() {
       </GridItem>
       <GridItem xs={12} sm={12} md={12}>
         <Card>
-          <CardHeader color="primary">
+          <CardHeader color="info">
             <h4 className={classes.cardTitleWhite}>لیست تمام تراکنش ها</h4>
-            <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
-            </p>
+           
           </CardHeader>
           <CardBody>
             <Table
-              tableHeaderColor="primary"
+              tableHeaderColor="info"
               tableHead={["شماره", "مبلغ", "توضیحات", "تاریخ", "نوع"]}
               tableData={[
                 [
@@ -191,15 +185,13 @@ export default function TableFactor() {
       </GridItem>
       <GridItem xs={12} sm={12} md={12}>
         <Card>
-          <CardHeader color="primary">
+          <CardHeader color="info">
             <h4 className={classes.cardTitleWhite}>لیست تمام تراکنش ها</h4>
-            <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
-            </p>
+            
           </CardHeader>
           <CardBody>
             <Table
-              tableHeaderColor="primary"
+              tableHeaderColor="info"
               tableHead={["شماره", "مبلغ", "توضیحات", "تاریخ", "نوع"]}
               tableData={[
                 [
@@ -237,15 +229,13 @@ export default function TableFactor() {
       </GridItem>
       <GridItem xs={12} sm={12} md={12}>
         <Card>
-          <CardHeader color="primary">
+          <CardHeader color="info">
             <h4 className={classes.cardTitleWhite}>لیست تمام تراکنش ها</h4>
-            <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
-            </p>
+           
           </CardHeader>
           <CardBody>
             <Table
-              tableHeaderColor="primary"
+              tableHeaderColor="info"
               tableHead={["شماره", "مبلغ", "توضیحات", "تاریخ", "نوع"]}
               tableData={[
                 [

@@ -43,7 +43,7 @@ export default function UserProfile() {
       <GridContainer>
         <GridItem xs={12} sm={12} md={8}>
           <Card>
-            <CardHeader color="primary">
+            <CardHeader color="info">
               <div>
               <h4 className={classes.cardTitleWhite}>ویرایش اطلاعات</h4>
               <br />
@@ -107,7 +107,9 @@ export default function UserProfile() {
                     labelText="تاریخ تولد"
                     id="last-name"
                     formControlProps={{
-                      fullWidth: true
+                      fullWidth: false,
+                      color:'primary',
+                      
                     }}
                   />
                 </GridItem>
@@ -189,7 +191,7 @@ export default function UserProfile() {
               </GridContainer>
             </CardBody>
             <CardFooter>
-              <Button color="primary">Update Profile</Button>
+              <Button color="primary">ویرایش</Button>
             </CardFooter>
           </Card>
         </GridItem>
@@ -201,15 +203,13 @@ export default function UserProfile() {
               </a>
             </CardAvatar>
             <CardBody profile>
-              <h6 className={classes.cardCategory}>CEO / CO-FOUNDER</h6>
-              <h4 className={classes.cardTitle}>Alec Thompson</h4>
+              <h6 className={classes.cardCategory}>میلاد حسنی</h6>
+              <h4 className={classes.cardTitle}>حجره داری مهربان</h4>
               <p className={classes.description}>
-                Don{"'"}t be scared of the truth because we need to restart the
-                human foundation in truth And I love you like Kanye loves Kanye
-                I love Rick Owens’ bed design but the back is...
+               من از هفت سالگی به مدرسه رفتم و همه درسهام را مرتب و منظم خواندم...
               </p>
               <Button color="primary" round>
-                Follow
+                ویرایش
               </Button>
             </CardBody>
           </Card>

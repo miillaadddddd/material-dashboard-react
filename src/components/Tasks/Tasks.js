@@ -1,4 +1,10 @@
 import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 // @material-ui/core components
@@ -10,7 +16,7 @@ import Table from "@material-ui/core/Table";
 import TableRow from "@material-ui/core/TableRow";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
-import Link from '@material-ui/core/Link';
+
 // @material-ui/icons
 import Edit from "@material-ui/icons/Edit";
 import Close from "@material-ui/icons/Close";
@@ -23,7 +29,7 @@ const useStyles = makeStyles(styles);
 export default function Tasks(props) {
   const classes = useStyles();
   const [checked, setChecked] = React.useState([...props.checkedIndexes]);
-  const handleToggle = value => {
+  const handleToggle = (value) => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
     if (currentIndex === -1) {
@@ -35,26 +41,18 @@ export default function Tasks(props) {
   };
   const { tasksIndexes, tasks, rtlActive } = props;
   const tableCellClasses = classnames(classes.tableCell, {
-    [classes.tableCellRTL]: rtlActive
+    [classes.tableCellRTL]: rtlActive,
   });
   return (
     <Table className={classes.table}>
       <TableBody>
-        {tasksIndexes.map(value => (
+        {tasksIndexes.map((value) => (
           <TableRow key={value} className={classes.tableRow}>
+            <TableCell className={tableCellClasses}></TableCell>
             <TableCell className={tableCellClasses}>
               
+              <Link to={"/admin/typography/"+value}>{tasks[value]}</Link>
             </TableCell>
-            <TableCell className={tableCellClasses}><Link
-      component="button"
-      variant="body2"
-      onClick={() => {
-        console.info("I'm a button.");
-      }}
-    >
-      {tasks[value]}
-    </Link>
-              </TableCell>
             <TableCell className={classes.tableActions}>
               <Tooltip
                 id="tooltip-top"
@@ -102,5 +100,5 @@ Tasks.propTypes = {
   tasksIndexes: PropTypes.arrayOf(PropTypes.number),
   tasks: PropTypes.arrayOf(PropTypes.node),
   rtlActive: PropTypes.bool,
-  checkedIndexes: PropTypes.array
+  checkedIndexes: PropTypes.array,
 };

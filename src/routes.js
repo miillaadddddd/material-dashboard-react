@@ -30,13 +30,13 @@ import NotificationsPage from "views/Notifications/Notifications.js";
 
 // core components/views for RTL layout
 const dashboardRoutes = [
-  {
-    path: "/dashboard",
-    name: "داشبورد",
-    icon: Dashboard,
-    component: DashboardPage,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/dashboard",
+  //   name: "داشبورد",
+  //   icon: Dashboard,
+  //   component: DashboardPage,
+  //   layout: "/admin",
+  // },
   {
     path: "/user",
     name: "پروفایل",

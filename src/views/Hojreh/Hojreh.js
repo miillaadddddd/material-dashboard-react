@@ -1,3 +1,4 @@
+
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -39,62 +40,58 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardIcon from "components/Card/CardIcon.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
-import Hojreh from "views/Hojreh/Hojreh.js";
-import Hojreh2 from "views/Hojreh2/Hojreh2.js";
-
-
-import { bugs, website, server } from "variables/general.js";
-
-import {
-  dailySalesChart,
-  emailsSubscriptionChart,
-  completedTasksChart,
-} from "variables/charts.js";
 
 import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
 
 
   
 
+const useStyles = makeStyles(styles);
 
 
-export default function TypographyPage() {
-  
-
-  return (
-    <div>
+function Hojreh() {
+    
+    return (
       <GridContainer>
-        <GridItem xs={12} sm={12} md={8}>
-          <CustomTabs
-            title="حجره :"
-            headerColor="info"
-            tabs={[
-              {
-                tabName: "اطلاعات حساب",
-                tabIcon: BugReport,
-                
-              },
-              {
-                tabName: "حجره ها",
-                tabIcon: Code,
-                tabContent: (
-                  <Tasks
-                    checkedIndexes={[0]}
-                    tasksIndexes={[0, 1]}
-                    tasks={website}
-                  />
-                ),
-              },
-            ]}
-          />
-        </GridItem>
-         
-      </GridContainer>
-      <Switch>
-           <Route path="/admin/typography/0">{Hojreh2}</Route>
-           <Route path="/admin/typography/1">{Hojreh}</Route>
-         </Switch>
-     
-    </div>
-  );
+      <GridItem xs={12} sm={12} md={8}>
+        <Card>
+          <CardHeader color="info">
+            <div>
+              <h4 >محصولات</h4>
+              <br />
+              <p ></p>
+            </div>
+          </CardHeader>
+          <CardBody>
+            <GridContainer></GridContainer>
+            
+          </CardBody>
+          <CardFooter>
+            <Button color="info">افزودن</Button>
+          </CardFooter>
+        </Card>
+      </GridItem>
+      <GridItem xs={12} sm={12} md={4}>
+      <Card profile >
+        <CardAvatar profile>
+          <a href="#pablo" onClick={(e) => e.preventDefault()}>
+            <img src={avatar} alt="..." />
+          </a>
+        </CardAvatar>
+        <CardBody profile>
+          <h6 >حجره علی </h6>
+          <h4 >حجره کاشی فروشی</h4>
+          <p >
+           کاشی های خود را ازم من بگیر
+          </p>
+          <Button color="info" round>
+            ویرایش
+          </Button>
+        </CardBody>
+      </Card>
+    </GridItem>
+    </GridContainer>
+    )
 }
+
+export default Hojreh
