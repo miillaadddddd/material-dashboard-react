@@ -11,7 +11,11 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
+import FormDashboard from '../FormDashboard.js'
 import CardFooter from "components/Card/CardFooter.js";
+import SignupForm from "views/forms/Form2.js";
+
+
 
 import avatar from "assets/img/faces/marc.jpg";
 
@@ -34,10 +38,11 @@ const styles = {
   }
 };
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles();
 
 export default function UserProfile() {
   const classes = useStyles();
+ 
   return (
     <div>
       <GridContainer>
@@ -51,148 +56,9 @@ export default function UserProfile() {
               </div>
             </CardHeader>
             <CardBody>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="نام کاربری *"
-                    id="company-disabled"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                    // inputProps={{
-                    //   disabled: true
-                    // }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="نام "
-                    id="username"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="نام خانوادگی"
-                    id="email-address"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-              </GridContainer>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="جنسیت"
-                    id="first-name"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="کدملی"
-                    id="last-name"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="تاریخ تولد"
-                    id="last-name"
-                    formControlProps={{
-                      fullWidth: false,
-                      color:'primary',
-                      
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="شماره موبایل"
-                    id="first-name"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-              </GridContainer>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="استان"
-                    id="city"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="شهرستان"
-                    id="country"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="شهر"
-                    id="postal-code"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-              </GridContainer>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="کد پستی"
-                    id="city"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={8}>
-                  <CustomInput
-                    labelText="آدرس"
-                    id="country"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                
-              </GridContainer>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={12}>
-                  <InputLabel style={{ color: "#aaaa" }}>درباره من</InputLabel>
-                  <CustomInput
-                    labelText="خوشحال میشویم بیشتر با هم آشنا بشویم .."
-                    id="about-me"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                    inputProps={{
-                      multiline: true,
-                      rows: 5
-                    }}
-                  />
-                </GridItem>
-              </GridContainer>
-            </CardBody>
-            <CardFooter>
-              <Button color="primary">ویرایش</Button>
-            </CardFooter>
+            <FormDashboard/>
+             </CardBody>
+            
           </Card>
         </GridItem>
         <GridItem xs={12} sm={12} md={4}>
@@ -208,13 +74,23 @@ export default function UserProfile() {
               <p className={classes.description}>
                من از هفت سالگی به مدرسه رفتم و همه درسهام را مرتب و منظم خواندم...
               </p>
-              <Button color="primary" round>
-                ویرایش
-              </Button>
+              
             </CardBody>
           </Card>
         </GridItem>
+     
+         <GridItem xs={12} sm={12} md={12}>
+
+
+           
+           
+           
+           
+           </GridItem>           
+           
       </GridContainer>
+      
     </div>
-  );
+    
+    );
 }

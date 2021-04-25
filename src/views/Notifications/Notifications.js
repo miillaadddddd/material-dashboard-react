@@ -1,4 +1,5 @@
 import React from "react";
+import { Spring } from "react-spring";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // core components
@@ -8,6 +9,7 @@ import Table from "components/Table/Table.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
+import FormHogreh from "views/FormHogreh.js"
 
 const styles = {
   cardCategoryWhite: {
@@ -16,11 +18,11 @@ const styles = {
       margin: "0",
       fontSize: "14px",
       marginTop: "0",
-      marginBottom: "0"
+      marginBottom: "0",
     },
     "& a,& a:hover,& a:focus": {
-      color: "#FFFFFF"
-    }
+      color: "#FFFFFF",
+    },
   },
   cardTitleWhite: {
     color: "#FFFFFF",
@@ -34,57 +36,60 @@ const styles = {
       color: "#777",
       fontSize: "65%",
       fontWeight: "400",
-      lineHeight: "1"
-    }
-  }
+      lineHeight: "1",
+    },
+  },
 };
 
 const useStyles = makeStyles(styles);
 
-
-
 export default function Notifications() {
-  
   const classes = useStyles();
   return (
-    <GridContainer>
-      
-      <GridItem xs={12} sm={12} md={12}>
-        <Card >
-          <CardHeader  color="info">
-            <h4 className={classes.cardTitleWhite}>
-              نظرات
-            </h4>
-            
-          </CardHeader>
-          <CardBody>
-            <Table
-              tableHeaderColor="info"
-              tableHead={[
-                "نوع",
-                "متن",
-                "مخاطب",
-                "تعداد لایک",
-                "تاریخ",
-                "وضغیت",  
-              ]}
-              tableData={[
-                ["1",
-                "کرمان شهر بزرگیه",
-                "ممد",
-                "635",
-                "25/12/72",
-                "خوانده شده",
-              ],
-                
-                
-              ]}
-            />
-          </CardBody>
-        </Card>
-      </GridItem>
-    </GridContainer>
-  
-
-   );
+    <Spring
+    from={{opacity:0 , marginTop:-500}}
+    to={{opacity:1 , marginTop:0}}
+    
+    
+    
+    >
+      {(props) => (
+        <div style={props}>
+          <GridContainer>
+            <GridItem xs={12} sm={12} md={12}>
+              <Card>
+                <CardHeader color="info">
+                  <h4 className={classes.cardTitleWhite}>نظرات</h4>
+                </CardHeader>
+                <CardBody>
+                  <Table
+                    tableHeaderColor="info"
+                    tableHead={[
+                      "نوع",
+                      "متن",
+                      "مخاطب",
+                      "تعداد لایک",
+                      "تاریخ",
+                      "وضعیت",
+                    ]}
+                    tableData={[
+                      [
+                        "1",
+                        "کرمان شهر بزرگیه",
+                        "ممد",
+                        "635",
+                        "25/12/72",
+                        "خوانده شده",
+                      ],
+                    ]}
+                  />
+                </CardBody>
+              </Card>
+            </GridItem>
+          </GridContainer>
+          <FormHogreh/>
+        </div>
+      )}
+    </Spring>
+  );
 }

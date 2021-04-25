@@ -39,8 +39,10 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardIcon from "components/Card/CardIcon.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
+import FormHesab from "views/forms/FormHesab.js";
 import Hojreh from "views/Hojreh/Hojreh.js";
 import Hojreh2 from "views/Hojreh2/Hojreh2.js";
+import FormHesabEnfo from 'views/FormHesabEnfo.js'
 
 
 import { bugs, website, server } from "variables/general.js";
@@ -72,6 +74,9 @@ export default function TypographyPage() {
               {
                 tabName: "اطلاعات حساب",
                 tabIcon: BugReport,
+                tabContent:(
+                  <FormHesabEnfo/>
+                )
                 
               },
               {
