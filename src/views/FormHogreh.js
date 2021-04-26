@@ -1,9 +1,9 @@
 import React from "react";
-import { Formik, Form } from "formik";
+import { Formik, Form, Field } from "formik";
 import { Container, Grid, Typography, TextField } from "@material-ui/core";
 import * as Yup from "yup";
 import { makeStyles } from "@material-ui/core/styles";
-import Divider from '@material-ui/core/Divider';
+import Divider from "@material-ui/core/Divider";
 import Textfield from "./FormUi/Textfield/index.js";
 import Select from "./FormUi/Select/index.js";
 import DateTimePicker from "./FormUi/DataTimePiker/index.js";
@@ -20,85 +20,35 @@ const useStyles = makeStyles((theme) => {
   }
 });
 const INITIAL_FORM_STATE = {
-  nameShop:"",
-  slugShop:"",
-  aboutShop:"",
-  introShop:"",
-  
-
-
-  firstName: "",
-  username:"",
-  lastName: "",
-  sex:"",
-  code:"",
-  email: "",
-  phone: "",
-  addressLine1: "",
-  addressLine2: "",
+  nameShop: "",
+  slugShop: "",
+  aboutShop: "",
+  introShop: "",
   citey: "",
   state: "",
   countery: "",
-  arrivelDate: "",
-  deputureDate: "",
-  message: "",
   termsOfService: false,
-  codePosti:"",
-  telephone:"",
-  Me:"",
 };
 
 const FORM_VALIDAITIOM = Yup.object().shape({
-  firstName: Yup.string().required("الزامی"),
-  lastName: Yup.string().required("الزامی"),
-  email: Yup.string().email("وجود ندارد").required("الزامی"),
-  phone: Yup.number()
-    .integer()
-    .typeError("مقدار  نامجزا است")
-    .required("الزامی"),
-  addressLine1: Yup.string().required("الزامی"),
-  addressLine2: Yup.string(),
   citey: Yup.string().required("الزامی"),
   state: Yup.string().required("الزامی"),
   countery: Yup.string().required("الزامی"),
-  arrivelDate: Yup.date().required("الزامی"),
-  deputureDate: Yup.date().required("الزامی"),
-  message: Yup.string(),
+  aboutShop: Yup.string(),
+  introShop: Yup.string(),
   termsOfService: Yup.boolean()
     .oneOf([true], "Ghabool Kardi???")
     .required("hatman bayad bezani"),
-  code:Yup.number().integer().typeError("مقدار نامجزا است").required("الزامی"),
-  sex:Yup.string().required("الزامی"),
-  codePosti:Yup.number().integer().typeError("مقدار نامجزا است").required("الزامی"),
-  telephone:Yup.number()
-  .integer()
-  .typeError("type errorr dadai")
-  .required("الزامی"),
-  Me:Yup.string(),
   nameShop: Yup.string()
-        .min(8, 'Must be at least 8 characters')
-        .max(20, 'Must be less  than 20 characters')
-        .required('Username is required')
-        .matches(
-          /^[a-zA-Z0-9]+$/,
-          'Cannot contain special characters or spaces'
-        ),
+    .min(8, "Must be at least 8 characters")
+    .max(20, "Must be less  than 20 characters")
+    .required("Username is required")
+    .matches(/^[a-zA-Z0-9]+$/, "Cannot contain special characters or spaces"),
   slugShop: Yup.string()
-        .min(8, 'Must be at least 8 characters')
-        .max(20, 'Must be less  than 20 characters')
-        .required('Username is required')
-        .matches(
-          /^[a-zA-Z0-9]+$/,
-          'Cannot contain special characters or spaces'
-        ),
-  nameShop: Yup.string()
-        .min(8, 'Must be at least 8 characters')
-        .max(20, 'Must be less  than 20 characters')
-        .required('Username is required')
-        .matches(
-          /^[a-zA-Z0-9]+$/,
-          'Cannot contain special characters or spaces'
-        ),
+    .min(8, "Must be at least 8 characters")
+    .max(20, "Must be less  than 20 characters")
+    .required("Username is required")
+    .matches(/^[a-zA-Z0-9]+$/, "Cannot contain special characters or spaces"),
 });
 
 const FormHogreh = () => {
@@ -107,74 +57,60 @@ const FormHogreh = () => {
     <Grid container>
       <Grid item xs={12}></Grid>
       <Grid item xs={12}>
-        <Container maxWidth="md">
+        
           <div className={classes.formWrapper}>
             <Formik
               initialValues={{ ...INITIAL_FORM_STATE }}
               validationSchema={FORM_VALIDAITIOM}
               onSubmit={(values) => {
                 console.log(values);
+                alert(JSON.stringify(values, null, 2));
               }}
             >
               <Form>
                 <Grid container spacing={2}>
-
-                <Grid item xs={6}>
-                  <TextInputLiveFeedback
-                  label="عنوان حجره"
-                  id="username"
-                  name="username"
-                  helpText="عنوان باید فارسی و حداکثر70 کارکتر داشته باشد."
-                  type="text"
-                  />
-                  </Grid>
                   <Grid item xs={6}>
-                  <TextInputLiveFeedback
-                  label="شناسه حجره"
-                  id="username"
-                  name="username"
-                  helpText="شناسه حجره باید شامل حروف انگلیسی کوچک و خط تیره (-) وبدون فاصله باشد."
-                  type="text"
-                  />
-                  </Grid>
-                  
-                  <Grid item xs={6}>
-                    <Textfield name="firstName" label="نام *" />
-                  </Grid>
-                  <Grid item xs={6}>
-                    <Textfield name="lastName" label="نام خانوادگی *" />
-                  </Grid>
-                  <Grid item xs={4}>
-                    <Select
-                      name="sex"
-                      label="جنسیت"
-                      options={sex}
+                    <TextInputLiveFeedback
+                      label="عنوان حجره"
+                      id="nameShop"
+                      name="nameShop"
+                      helpText="عنوان باید فارسی و حداکثر70 کارکتر داشته باشد."
+                      type="text"
                     />
                   </Grid>
-                  <Grid item xs={4}>
-                    <Textfield name="code" label="کد ملی *" />
-                  </Grid>
-                  <Grid item xs={4}>
-                    <DateTimePicker name="arrivelDate" label="تاریخ تولد" />
-                  </Grid>
-                  <Divider />
-
-                  
                   <Grid item xs={6}>
-                    <Textfield name="email" label="ایمیل" />
-                  </Grid>
-                  <Grid item xs={6}>
-                    <Textfield name="phone" label="موبایل" />
+                    <TextInputLiveFeedback
+                      label="شناسه حجره"
+                      id="slugShop"
+                      name="slugShop"
+                      helpText="شناسه حجره باید شامل حروف انگلیسی کوچک و خط تیره (-)و بدون فاصله باشد."
+                      type="text"
+                    />
                   </Grid>
                   <Grid item xs={12}>
-                    <Typography  variant="h6">آدرس</Typography>
+                    <Textfield
+                      name="aboutShop"
+                      label="درباره حجره"
+                      multiline={true}
+                      rows={3}
+                      helperText="حجره خود را به صورت کامل معرفی نمایید."
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Textfield
+                      name="introShop"
+                      label="معرفی حجره دار"
+                      multiline={true}
+                      rows={2}
+                      helperText="متن کوتاهی با حداکثر 200 کارکتر در مورد خودتان"
+                    />
+                  </Grid>
+
+                  <Grid item xs={12}>
+                    <Typography variant="h6">آدرس</Typography>
                   </Grid>
                   <Grid item xs={4}>
-                    <Select
-                      name="countery"
-                      label="استان"
-                      options={countery}
-                    />
+                    <Select name="countery" label="استان" options={countery} />
                   </Grid>
                   <Grid item xs={4}>
                     <Textfield name="state" label="شهرستان" />
@@ -182,49 +118,61 @@ const FormHogreh = () => {
                   <Grid item xs={4}>
                     <Textfield name="citey" label="شهر" />
                   </Grid>
-                  
-                  
+
                   <Grid item xs={12}>
-                    <Textfield name="addressLine1" label="آدرس" />
+                    <Typography>روز های تعطیل</Typography>
                   </Grid>
-                  <Grid item xs={6}>
-                    <Textfield name="addressLine2" label="کد پستی" />
-                  </Grid>
-                  <Grid item xs={6}>
-                    <Textfield name="addressLine2" label="تلفن" />
-                  </Grid>
+                  <label>
+                    <Field type="checkbox" name="checked" value="1" />
+                    شنبه
+                  </label>
+                  <label>
+                    <Field type="checkbox" name="checked" value="2" />
+                    یکشنبه
+                  </label>
+                  <label>
+                    <Field type="checkbox" name="checked" value="3" />
+                    دوشنبه
+                  </label>
+                  <label>
+                    <Field type="checkbox" name="checked" value="4" />
+                    سه شنبه
+                  </label>
+                  <label>
+                    <Field type="checkbox" name="checked" value="5" />
+                    چهارشنبه
+                  </label>
+                  <label>
+                    <Field type="checkbox" name="checked" value="6" />
+                    پنجشنبه
+                  </label>
+                  <label>
+                    <Field type="checkbox" name="checked" value="7" />
+                    جمعه
+                  </label>
                   <Grid item xs={12}>
-                    <Textfield name="Me" label="من در یک جمله :" />
+                    <Typography variant="caption" display="block" gutterBottom>
+                      روزهای که حجره شما فعالیت ندارد را وارد نمایید
+                    </Typography>
                   </Grid>
 
                   <Grid item xs={12}>
-                    <Typography>درباره کتاب</Typography>
+                    <Checkbox name="" legend="" label="قبول قرار داد و ضوابط" />
                   </Grid>
                   <Grid item xs={12}>
-                    <Textfield
-                      name="message"
-                      label="از خودت بیشتر بگو"
-                      multiline={true}
-                      rows={3}
-                    />
-                  </Grid>
-
-                  
-                  <Grid item xs={12}>
-                    <Checkbox
-                      name=""
-                      legend=""
-                      label="از صحت تغییرات مطمن هیستم"
-                    />
+                    <Typography>
+                      تمامی قوانین را از صفحه قوانین سایت مطالعه کردم و آنها را
+                      می پذیرم.
+                    </Typography>
                   </Grid>
                   <Grid item xs={12}>
-                    <Button>ویرایش</Button>
+                    <Button type="submit">ویرایش</Button>
                   </Grid>
                 </Grid>
               </Form>
             </Formik>
           </div>
-        </Container>
+        
       </Grid>
     </Grid>
   );

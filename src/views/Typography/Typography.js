@@ -42,7 +42,9 @@ import CardFooter from "components/Card/CardFooter.js";
 import FormHesab from "views/forms/FormHesab.js";
 import Hojreh from "views/Hojreh/Hojreh.js";
 import Hojreh2 from "views/Hojreh2/Hojreh2.js";
-import FormHesabEnfo from 'views/FormHesabEnfo.js'
+import FormHesabEnfo from 'views/FormHesabEnfo.js';
+import FormHogreh from 'views/FormHogreh.js';
+import Container from '@material-ui/core/Container';
 
 
 import { bugs, website, server } from "variables/general.js";
@@ -93,8 +95,46 @@ export default function TypographyPage() {
             ]}
           />
         </GridItem>
+        <GridItem xs={12} sm={12} md={4}>
+        <Card profile >
+        
+        <CardBody profile>
+          <h6 >افزودن حجره </h6>
+          
+          <p >
+            به راحتی حجره دار شوید 
+          </p>
+          <Button color="info" round>
+           افزودن
+          </Button>
+        </CardBody>
+      </Card>
          
-      </GridContainer>
+      
+
+        </GridItem>
+        </GridContainer>
+        <GridItem xs={12} sm={12} md={12}>
+        <Container maxWidth="md">
+        <Card>
+          <CardHeader color="info">
+            <div>
+              <h4 >افزدون حجره</h4>
+              <br />
+              <p ></p>
+            </div>
+          </CardHeader>
+          <CardBody>
+            <GridContainer></GridContainer>
+            <FormHogreh/>
+          </CardBody>
+          <CardFooter>
+            <Button color="info">افزودن</Button>
+          </CardFooter>
+        </Card>
+        </Container>
+      </GridItem>
+        
       <Switch>
            <Route path="/admin/typography/0">{Hojreh2}</Route>
            <Route path="/admin/typography/1">{Hojreh}</Route>

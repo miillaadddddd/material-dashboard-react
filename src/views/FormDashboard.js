@@ -146,7 +146,7 @@ const FormDashboard = () => {
                   </Grid>
 
                   <Grid item xs={12}>
-                    <Typography>درباره کتاب</Typography>
+                    <Typography>درباره من</Typography>
                   </Grid>
                   <Grid item xs={12}>
                     <Textfield
