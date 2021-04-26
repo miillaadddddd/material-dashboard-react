@@ -56,75 +56,37 @@ import {
 } from "variables/charts.js";
 
 import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
-import AddHojreh from "views/AddHojreh/AddHojreh";
-
-
-  
 
 
 
-export default function TypographyPage() {
-  
 
-  return (
-    <div>
-      <GridContainer>
-        <GridItem xs={12} sm={12} md={8}>
-          <CustomTabs
-            title="حجره :"
-            headerColor="info"
-            tabs={[
-              {
-                tabName: "اطلاعات حساب",
-                tabIcon: BugReport,
-                tabContent:(
-                  <FormHesabEnfo/>
-                )
-                
-              },
-              {
-                tabName: "حجره ها",
-                tabIcon: Code,
-                tabContent: (
-                  <Tasks
-                    checkedIndexes={[0]}
-                    tasksIndexes={[0, 1]}
-                    tasks={website}
-                  />
-                ),
-              },
-            ]}
-          />
-        </GridItem>
-        <GridItem xs={12} sm={12} md={4}>
-        <Card profile >
-        
-        <CardBody profile>
-          <h6 >افزودن حجره </h6>
-          
-          <p >
-            به راحتی حجره دار شوید 
-          </p>
-          <Link to="/admin/typography/Add">
-          <Button color="info" round>
-           افزودن
-          </Button>
-          </Link>
-        </CardBody>
-      </Card>
-         
-      
 
-        </GridItem>
-        </GridContainer>
-        
-        
-      <Switch>
-        <Route path="/admin/typography/Add">{AddHojreh}</Route>
-           <Route path="/admin/typography/0">{Hojreh2}</Route>
-           <Route path="/admin/typography/1">{Hojreh}</Route>
-         </Switch>
-     
-    </div>
-  );
+function AddHojreh() {
+    return (
+        <GridItem xs={12} sm={12} md={12}>
+        <Container maxWidth="md">
+        <Card>
+          <CardHeader color="info">
+            <div>
+              <h4 >افزدون حجره</h4>
+              <br />
+              <p ></p>
+            </div>
+          </CardHeader>
+          <CardBody>
+            <GridContainer></GridContainer>
+            <FormHogreh/>
+          </CardBody>
+          <CardFooter>
+            <Button color="info">افزودن</Button>
+          </CardFooter>
+        </Card>
+        </Container>
+      </GridItem>
+    )
 }
+
+
+
+export default AddHojreh;
+
