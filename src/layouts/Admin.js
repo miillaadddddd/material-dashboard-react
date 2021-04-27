@@ -5,6 +5,7 @@ import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+
 // core components
 import Navbar from "components/Navbars/Navbar.js";
 import Footer from "components/Footer/Footer.js";
@@ -92,7 +93,12 @@ export default function Admin({ ...rest }) {
       window.removeEventListener("resize", resizeFunction);
     };
   }, [mainPanel]);
+
+  
+
+ 
   return (
+    
     <div className={classes.wrapper}>
       <Sidebar
         routes={routes}
@@ -122,5 +128,6 @@ export default function Admin({ ...rest }) {
        
       </div>
     </div>
+    
   );
 }

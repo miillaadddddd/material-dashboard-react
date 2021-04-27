@@ -9,6 +9,7 @@ import Table from "components/Table/Table.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
+import LoginPage from "views/LoginPage/LoginPage";
 
 
 const styles = {
@@ -87,6 +88,7 @@ export default function Notifications() {
               </Card>
             </GridItem>
           </GridContainer>
+          
           
         </div>
       )}

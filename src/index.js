@@ -21,6 +21,7 @@ import { createBrowserHistory } from "history";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
 import CustomThemeRtl from './ThemeRTl/CustomTheme';
 
+
 // core components
 import Admin from "layouts/Admin.js";
 import RTL from "layouts/RTL.js";
@@ -32,6 +33,9 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { create } from 'jss';
 import rtl from 'jss-rtl';
 import { StylesProvider, jssPreset } from '@material-ui/core/styles';
+import LoginPage from "views/LoginPage/LoginPage";
+import PrivateRoute from "./Router/PrivateRoute";
+import { UserProvider } from './Context/UserContext';
 
 // Configure JSS
 const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
@@ -41,16 +45,22 @@ const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
 const hist = createBrowserHistory();
 
 ReactDOM.render(
+  <UserProvider>
   <Router history={hist}>
     <Switch>
     <ThemeProvider theme={CustomThemeRtl}>
       <StylesProvider jss={jss}>
+        
+      <PrivateRoute exact path="/" component={PrivateRoute} />
+
+      <Route path="/login/" exact component={LoginPage} />
       <Route path="/admin" component={Admin} />
      
-      <Redirect from="/" to="/admin/dashboard" />
+      {/* <Redirect from="/" to="/admin/dashboard" /> */}
       </StylesProvider>
       </ThemeProvider>
     </Switch>
-  </Router>,
+  </Router>
+  </UserProvider>,
   document.getElementById("root")
 );
